@@ -240,8 +240,9 @@ export class CellsDevApi {
             json: true,
             body:bodyParameter,
         };
-
+        console.log(localVarPath);
         const response = await invokeApiMethod(requestOptions, this.configuration);
+        
         const result =  ObjectSerializer.deserialize(response.body, "ResponseFiles");
         return Promise.resolve({body: result, response});
     }

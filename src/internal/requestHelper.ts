@@ -101,10 +101,13 @@ async function invokeApiMethodInternal(requestOptions: request.Options, confgura
     }
 
     return new Promise<request.RequestResponse>((resolve, reject) => {
+        console.log("requestOptions");
         const r = request(requestOptions, async (error, response) => {
             if (error) {
+                console.log(error);
                 reject(error);
             } else {
+                console.log(response.statusCode);
                 if (response.statusCode >= 200 && response.statusCode <= 299) {
                     resolve(response);
                 } else if (response.statusCode === 401 && !notApplyAuthToRequest) {

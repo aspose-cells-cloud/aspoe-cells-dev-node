@@ -14,7 +14,7 @@ var assert = require('assert');
 
 describe('Controllers test', function() {
     this.timeout(200000);
-    const cellsApi = new api.CellsDevApi("http://127.0.0.1:16000","v1.0");
+    const cellsApi = new api.CellsDevApi("http://localhost:14297","v1.0");
 
     describe('postConvertWorkbook_pdf test', function(){
       it("should call PostConvertWorkbook successfully" , function(){
@@ -828,16 +828,13 @@ describe('Controllers test', function() {
         var request = new model.DigitalSignaturRequest();
          
         request.digitalSignaturFiles =[];  
-        request.digitalSignaturFiles.push(baseCommon.getDigitalSignaturFile(localPath,localPfx, "12345"));
+        request.digitalSignaturFiles.push(baseCommon.getDigitalSignaturFile(localPath,localPfx, "123456"));
 
-
-         
         request.files =[];  
-        request.files.push(baseCommon.getRequestFile(localPath,localBook1));
 
         request.files.push(baseCommon.getRequestFile(localPath,localMyDoc));
 
-         
+       
 
         return cellsApi.postDigitalSignature(request).then((result) => {
             expect(result.response.statusCode).to.equal(200);

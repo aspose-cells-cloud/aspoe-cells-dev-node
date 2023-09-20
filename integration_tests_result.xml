@@ -1,0 +1,11 @@
+<testsuites name="Mocha Tests">
+  <testsuite name="Controllers test postDigitalSignature test" tests="1" errors="0" failures="1" skipped="0" timestamp="2023-02-21T02:42:13" time="0.046">
+    <testcase classname="Controllers test postDigitalSignature test" name="should call PostDigitalSignature successfully" time="0.042">
+      <failure message="Error while parse server error: TypeError: Cannot read properties of undefined (reading &apos;message&apos;)"></failure>
+      <system-out><![CDATA[http://localhost:14297/v1.0/cells/protect/digital-signature
+requestOptions
+307
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
